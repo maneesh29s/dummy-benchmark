@@ -9,6 +9,8 @@ fi
 method=$1  # add , sub
 size=$2
 
+startTime=`gdate +%s%3N`;
+
 ans=0
 for (( i=1 ; i <= size ; i++ ))
 do
@@ -21,4 +23,8 @@ do
     fi     
 done
 
-echo "Result : $ans";
+endTime=`gdate +%s%3N`;
+diffMilliSeconds=$(($endTime-$startTime));
+
+echo "Answer : ${ans}"
+echo "Time taken : ${diffMilliSeconds}";
